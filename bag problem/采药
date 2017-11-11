@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<string.h>
+const int MAX=1005;
+int dp[MAX];
+int v,p;
+int main()
+{
+	int T,m,i,t;
+	while(scanf("%d%d",&T,&m)!=EOF)     //总时间   数量3
+	{
+		memset(dp,0,sizeof(dp));
+		while(m--)                          //2 1
+		{
+			scanf("%d%d",&t,&v);            //每一个的时间和价值
+			for(i=T;i>=t;i--)           //每一个的时间不超过总时间
+				if(dp[i-t]+v>dp[i])     //
+					dp[i]=dp[i-t]+v;
+		}
+		printf("%d\n",dp[T]);
+	}
+	return 0;
+}
