@@ -1,2 +1,2 @@
 # Cpp
-some exercises will be put in here.
+  个人算法学习笔记，代码仓库
