@@ -1,0 +1,30 @@
+#include<cstdio>
+#include<iostream>
+using namespace std;
+int re (int b,int x,char a[]);
+
+int main()
+{
+    int b=0,first=1;
+    char a[33];
+    scanf("%s",a);
+    for(int x=0;x<32;x+=8)
+    {
+        b=re(b,x,a);
+        if(first)   first=0;
+        else cout<<".";
+        cout<<b;
+        b=0;
+    }
+    return 0;
+}
+
+
+int re (int b,int x,char a[])
+{
+    for(int i=x;i<x+8;i++)
+    {
+        b=b*2+a[i]-'0';
+    }
+    return b;
+}
