@@ -1,0 +1,28 @@
+#include<iostream>
+#include<cstring>
+#include<cstdio>
+#include<ctype.h>
+using namespace std;
+
+int main()
+{
+    int n=0;
+	  char ch;
+	  while((ch=getchar())!='\n')
+    {
+        if(isalpha(ch))
+        {
+            ch=toupper(ch);
+            n+=ch-'A'+1;
+        }
+    }
+	  int z=0,o=0;
+  	while(n)
+    {
+        if(n%2==0)  z++;
+        else o++;
+        n/=2;
+    }
+	  cout<<z<<" "<<o<<endl;
+  	return 0;
+}
