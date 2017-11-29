@@ -1,0 +1,39 @@
+void QuickSort (int a[],int l,int r)
+{
+    int f,t,x,y;
+    x=l;
+    y=r;
+    f=a[(l+r)/2];
+    while(x<y)
+    {
+        while(a[x]<f)
+        {
+            x++;
+        }
+        while(a[y]>f)
+        {
+            y--;
+        }
+        if(x<=y)
+        {
+            t=a[x];
+            a[x]=a[y];
+            a[y]=t;
+            y--;
+            x++;
+        }
+    }
+    if(x==y)
+    {
+        x++;
+    }
+    if(l<y)
+    {
+        QuickSort(a,l,x-1);
+    }
+    if(x<r)
+    {
+        QuickSort(a,y+1,r);
+    }
+
+}
