@@ -1,0 +1,37 @@
+void AlphaSort(char *a[],int left,int right)
+{
+    int l,r;
+    char *f;
+    l=left;
+    r=right;
+    f=a[(right+left)/2];
+    while(l<r)
+    {
+        while(strcmp(a[l],f)<0&&l<right)
+        {
+            l++;
+        }
+        while(strcmp(a[r],f)>0&&r>left)
+        {
+            r--;
+        }
+        if(l<=r)
+        {
+            swap(a[r],a[l]);
+            l++;
+            r--;
+        }
+    }
+    if(l==r)
+    {
+        l++;
+    }
+    if(left<r)
+    {
+        AlphaSort(a,left,l-1);
+    }
+    if(l<right)
+    {
+        AlphaSort(a,r+1,right);
+    }
+}
