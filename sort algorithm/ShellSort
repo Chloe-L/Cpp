@@ -1,0 +1,26 @@
+void ShellSort (int a[],int len)
+{
+    int x=0;
+    for(int r=len/2;r>=1;r/=2)
+    {
+        for(int i=r;i<len;i++)
+        {
+            int cnt=a[i];
+            int j=i-r;
+            while(j>=0&&cnt<a[j])
+            {
+                a[j+r]=a[j];
+                j-=r;
+            }
+            a[j+r]=cnt;
+        }
+        x++;
+
+
+    }
+    for(int k=0;k<len;k++)
+    {
+        cout<<a[k]<<" ";
+    }
+    cout<<endl;
+}
